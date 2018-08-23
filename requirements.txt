@@ -9,7 +9,6 @@ itsdangerous
 Jinja2
 MarkupSafe
 meetup-api
-pkg-resources
 python-dateutil
 python-dotenv
 requests
