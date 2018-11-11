@@ -6,6 +6,7 @@ from wtforms import (
     SubmitField,
 )
 from wtforms.validators import DataRequired
+from nb_meetup import app
 
 
 class NewMeetupEvent(FlaskForm):
@@ -13,14 +14,15 @@ class NewMeetupEvent(FlaskForm):
     duration = IntegerField('duration')
     email_reminders = BooleanField('reminders')
     group_id = IntegerField('group id')
-    group_urlname = StringField('group url')
+    group_urlname = StringField('group url',
+                                default=app.config['GROUP_URLNAME'])
     guest_limit = IntegerField('guests')
     host_instructions = StringField('hst instructions')
     hosts = StringField('host ids')
     how_to_find_us = StringField('how to find')
     name = StringField('event name')
     publish_status = StringField('publish status')
-    questions = ""
+    questions = StringField("questions")
     rsvp_alerts = BooleanField('rsvp alerts')
     rsvp_close = IntegerField('rsvp close time')
     rsvp_limit = IntegerField('max rsvps')
@@ -34,4 +36,4 @@ class NewMeetupEvent(FlaskForm):
 
     def validate_description(form, field):
         if len(field.data) > 50000:
-            raise ValidationError('Description can only be 50k characters')\
+            raise ValidationError('Description can only be 50k characters')
