@@ -3,32 +3,46 @@
 {% block content %}
 
 {% from "_formhelpers.html" import render_field %}
-<form method=post>
-  <dl>
-    {{ render_field(form.description) }}
-    {{ render_field(form.duration) }}
-    {{ render_field(form.email_reminders) }}
-    {{ render_field(form.group_id) }}
-    {{ render_field(form.group_urlname) }}
-    {{ render_field(form.guest_limit) }}
-    {{ render_field(form.host_instructions) }}
-    {{ render_field(form.hosts) }}
-    {{ render_field(form.how_to_find_us) }}
-    {{ render_field(form.name) }}
-    {{ render_field(form.publish_status) }}
-    {{ render_field(form.questions) }}
-    {{ render_field(form.rsvp_alerts) }}
-    {{ render_field(form.rsvp_close) }}
-    {{ render_field(form.rsvp_limit) }}
-    {{ render_field(form.rsvp_open) }}
-    {{ render_field(form.simple_html_description) }}
-    {{ render_field(form.time) }}
-    {{ render_field(form.venue_id) }}
-    {{ render_field(form.venue_visibility) }}
-    {{ render_field(form.waitlisting) }}
-    {{ render_field(form.why) }}
-	</dl>
-	<p><input type=submit value=NewEvent>
+<form action="" method="post" novalidate>
+  <div>
+    {% with messages = get_flashed_messages() %}
+    {% if messages %}
+      <ul>
+        {% for message in messages %}
+          <li> {{ message }} </li>
+        {% endfor  %}
+      </ul>
+    {% endif %}
+    {% endwith %}
+  </div>
+  <div>
+    <h1>Create new Noisebridge Meetup</h1>
+    <div class="mandatory">
+      {{ render_field(form.name) }}
+      {{ render_field(form.description) }}
+      {{ render_field(form.time) }}
+      {{ render_field(form.duration) }}
+      <div class="venue">
+        Venue: <br>
+        {{ form.nb.address[0] }}<br>
+        {{ form.nb.address[1] }}<br>
+        {{ form.nb.city}}, {{form.nb.state}}, {{form.nb.zip }}<br>
+        {{ render_field(form.how_to_find_us) }}
+      </div>
+    </div>
+    {{ render_field(form.email_reminders) }}<br>
+    {{ render_field(form.guest_limit) }}<br>
+    {{ render_field(form.host_instructions) }}<br>
+    {{ render_field(form.event_hosts) }}<br>
+    {{ render_field(form.questions) }}<br>
+    {{ render_field(form.rsvp_alerts) }}<br>
+    {{ render_field(form.rsvp_close) }}<br>
+    {{ render_field(form.rsvp_limit) }}<br>
+    {{ render_field(form.rsvp_open) }}<br>
+    {{ render_field(form.simple_html_description) }}<br>
+    {{ render_field(form.venue_visibility) }}<br>
+    {{ form.submit}}
+  </div>
 </form>
 
 {% endblock %}

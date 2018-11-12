@@ -1,1 +1,2 @@
 FLASK_APP=nb_meetup.py
+FLASK_DEBUG=1
