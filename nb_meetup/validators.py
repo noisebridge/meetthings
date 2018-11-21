@@ -7,6 +7,7 @@ class Length:
         self.max = max
         if not message:
             mesasge = u'Field must be between {} and {}'.format(min, max)
+
         self.message = message
 
     def __call__(self, form, field):
@@ -16,3 +17,21 @@ class Length:
 
 
 length = Length
+
+
+class IsValidValue:
+    def __init__(self, min=0, max=0, message=None):
+        self.min = min
+        self.max = max
+        if not message:
+            message = u'Field must be between {} and {}'.format(min, max)
+
+        self.message = message
+
+    def __call__(self, form, field):
+        value = field.data
+        if not (value <= self.max and value >= self.min):
+            raise ValidationError(self.message)
+
+
+isValidValue = IsValidValue

@@ -5,3 +5,13 @@
     box-sizing: border-box;
     border: 1px solid red;
 }
+
+#name {
+    font-size: 16pt;
+    max-width: 80ch;
+}
+
+#description {
+    font-size: 14pt;
+    max-width: 80ch;
+}

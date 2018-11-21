@@ -19,6 +19,7 @@ def index():
 def create_event():
     form = NewMeetupEvent(request.form)
     if request.method == "POST":
+        # I have to create the event here or something..??
         flash("New event created!")
         return redirect(url_for('index'))
     form.group_id.data = app.config['GROUP_ID']

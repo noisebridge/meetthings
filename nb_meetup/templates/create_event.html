@@ -9,7 +9,7 @@
     {% if messages %}
       <ul>
         {% for message in messages %}
-          <li> {{ message }} </li>
+        <li> {{ message }} </li><br>
         {% endfor  %}
       </ul>
     {% endif %}
@@ -18,16 +18,24 @@
   <div>
     <h1>Create new Noisebridge Meetup</h1>
     <div class="mandatory">
-      {{ render_field(form.name) }}
-      {{ render_field(form.description) }}
-      {{ render_field(form.time) }}
-      {{ render_field(form.duration) }}
+      {{ render_field(form.name) }}<br>
+      {{ render_field(form.description) }}<br>
+      {{ render_field(form.time) }}<br>
+      {{ render_field(form.duration) }}<br>
       <div class="venue">
         Venue: <br>
         {{ form.nb.address[0] }}<br>
         {{ form.nb.address[1] }}<br>
         {{ form.nb.city}}, {{form.nb.state}}, {{form.nb.zip }}<br>
         {{ render_field(form.how_to_find_us) }}
+      </div>
+      <div class="starttime">
+        {{ form.start_month }}<br>
+        {{ form.start_day }}<br>
+        {{ form.start_year }}<br>
+        {{ form.start_hour }}<br>
+        {{ form.start_min }}<br>
+        {{form.start_day_part }}<br>
       </div>
     </div>
     {{ render_field(form.email_reminders) }}<br>
