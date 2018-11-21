@@ -7,11 +7,11 @@
   <div>
     {% with messages = get_flashed_messages() %}
     {% if messages %}
-      <ul>
-        {% for message in messages %}
-        <li> {{ message }} </li><br>
-        {% endfor  %}
-      </ul>
+    <ul>
+      {% for message in messages %}
+      <li> {{ message }} </li><br>
+      {% endfor  %}
+    </ul>
     {% endif %}
     {% endwith %}
   </div>
@@ -20,22 +20,32 @@
     <div class="mandatory">
       {{ render_field(form.name) }}<br>
       {{ render_field(form.description) }}<br>
-      {{ render_field(form.time) }}<br>
-      {{ render_field(form.duration) }}<br>
+      <div id="schedule">
+        <span class="label" id="starttime">Start Time</span>
+        <div class="starttime">
+          {{ form.start_month }}<br>
+          {{ form.start_day }}<br>
+          {{ form.start_year }}<br>
+          {{ form.start_hour }}<br>
+          {{ form.start_min }}<br>
+          {{ form.start_day_part }}<br>
+        </div>
+        <div class="endtime">
+          <span class="label" id="endtime">End Time</span>
+          {{ form.end_month }}<br>
+          {{ form.end_day }}<br>
+          {{ form.end_year }}<br>
+          {{ form.end_hour }}<br>
+          {{ form.end_min }}<br>
+          {{ form.end_day_part }}<br>
+        </div>
+      </div>
       <div class="venue">
         Venue: <br>
         {{ form.nb.address[0] }}<br>
         {{ form.nb.address[1] }}<br>
         {{ form.nb.city}}, {{form.nb.state}}, {{form.nb.zip }}<br>
         {{ render_field(form.how_to_find_us) }}
-      </div>
-      <div class="starttime">
-        {{ form.start_month }}<br>
-        {{ form.start_day }}<br>
-        {{ form.start_year }}<br>
-        {{ form.start_hour }}<br>
-        {{ form.start_min }}<br>
-        {{form.start_day_part }}<br>
       </div>
     </div>
     {{ render_field(form.email_reminders) }}<br>

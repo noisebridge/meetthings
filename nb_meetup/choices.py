@@ -5,10 +5,10 @@ THIS_DAY = TODAY.day
 THIS_MONTH = TODAY.month
 THIS_YEAR = TODAY.year
 
-MINS_RANGE = range(0, 60)
-MINS = zip(MINS_RANGE, MINS_RANGE)
-HOURS_RANGE = range(1, 13)
-HOURS = zip(HOURS_RANGE, HOURS_RANGE)
+MINS_RANGE = list(range(0, 60))
+MINS = list(zip(MINS_RANGE, MINS_RANGE))
+HOURS_RANGE = list(range(1, 13))
+HOURS = list(zip(HOURS_RANGE, HOURS_RANGE))
 DAY_NAMES = ["Sun", "Mon", "Tues", "Weds", "Thurs", "Fri", "Sat"]
 DAYS = [(x, x) for x in range(1, 32)]
 MONTHS = [(1, "Jan"),

@@ -58,7 +58,6 @@ class NewMeetupEvent(FlaskForm):
                               validators=[isValidValue(1, 12)],
                               choices=choices.MONTHS)
     start_year = SelectField("Year",
-                             validators=[isValidValue(2018, 3000)],
                              choices=choices.YEARS)
     start_hour = SelectField("Hour",
                              validators=[isValidValue(1, 12)],
@@ -69,6 +68,24 @@ class NewMeetupEvent(FlaskForm):
     start_day_part = SelectField("AM/PM",
                                  validators=[isValidValue(0, 1)],
                                  choices=[(0, "AM"), (1, "PM")])
+    end_day = SelectField('Day',
+                          validators=[isValidValue(1, 31)],
+                          choices=choices.DAYS
+                          )
+    end_month = SelectField("Month",
+                            validators=[isValidValue(1, 12)],
+                            choices=choices.MONTHS)
+    end_year = SelectField("Year",
+                           choices=choices.YEARS)
+    end_hour = SelectField("Hour",
+                           validators=[isValidValue(1, 12)],
+                           choices=choices.HOURS)
+    end_min = SelectField("Min",
+                          validators=[isValidValue(0, 59)],
+                          choices=choices.MINS)
+    end_day_part = SelectField("AM/PM",
+                               validators=[isValidValue(0, 1)],
+                               choices=[(0, "AM"), (1, "PM")])
 
     venue_id = IntegerField('venue id',
                             validators=[DataRequired()])

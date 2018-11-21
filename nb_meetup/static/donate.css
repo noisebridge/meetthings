@@ -15,3 +15,18 @@
     font-size: 14pt;
     max-width: 80ch;
 }
+
+div.starttime {
+    float: left;
+}
+div.endtime {
+    float: clear;
+}
+
+div#schedule {
+    float: clear;
+}
+
+div.venue {
+    float: clear;
+}
