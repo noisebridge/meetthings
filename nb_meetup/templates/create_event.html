@@ -20,32 +20,36 @@
     <div class="mandatory">
       {{ render_field(form.name) }}<br>
       {{ render_field(form.description) }}<br>
-      <div id="schedule">
-        <span class="label" id="starttime">Start Time</span>
-        <div class="starttime">
-          {{ form.start_month }}<br>
-          {{ form.start_day }}<br>
-          {{ form.start_year }}<br>
-          {{ form.start_hour }}<br>
-          {{ form.start_min }}<br>
-          {{ form.start_day_part }}<br>
+      <div id="placeandtime">
+        <div id="schedule">
+          <div class="starttime">
+            <span class="label" id="starttime">Start Time</span><br>
+            {{ form.start_month }}
+            {{ form.start_day }}
+            {{ form.start_year }} <br>
+            {{ form.start_hour }}
+            {{ form.start_min }}
+            {{ form.start_day_part }}
+          </div>
+          <br>
+          <div class="endtime">
+            <span class="label" id="endtime">End Time</span><br>
+            {{ form.end_month }}
+            {{ form.end_day }}
+            {{ form.end_year }} <br>
+            {{ form.end_hour }}
+            {{ form.end_min }}
+            {{ form.end_day_part }}
+          </div>
         </div>
-        <div class="endtime">
-          <span class="label" id="endtime">End Time</span>
-          {{ form.end_month }}<br>
-          {{ form.end_day }}<br>
-          {{ form.end_year }}<br>
-          {{ form.end_hour }}<br>
-          {{ form.end_min }}<br>
-          {{ form.end_day_part }}<br>
+        <br>
+        <div class="venue">
+          Venue: <br>
+          {{ form.nb.address[0] }}<br>
+          {{ form.nb.address[1] }}<br>
+          {{ form.nb.city}}, {{form.nb.state}}, {{form.nb.zip }}<br>
+          {{ render_field(form.how_to_find_us) }}
         </div>
-      </div>
-      <div class="venue">
-        Venue: <br>
-        {{ form.nb.address[0] }}<br>
-        {{ form.nb.address[1] }}<br>
-        {{ form.nb.city}}, {{form.nb.state}}, {{form.nb.zip }}<br>
-        {{ render_field(form.how_to_find_us) }}
       </div>
     </div>
     {{ render_field(form.email_reminders) }}<br>

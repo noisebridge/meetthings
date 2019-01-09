@@ -16,17 +16,45 @@
     max-width: 80ch;
 }
 
-div.starttime {
-    float: left;
-}
-div.endtime {
-    float: clear;
+.starttime {
+    margin: 5px;
+    padding: 2px;
 }
 
-div#schedule {
-    float: clear;
+#start_month, #end_month, #start_hour, #end_hour {
+    width: 10%;
 }
 
-div.venue {
-    float: clear;
+#start_day, #end_day, #start_min, #end_min {
+    width: 10%;
 }
+
+.endtime {
+    margin: 5px;
+    padding: 2px;
+}
+
+select {
+    margin: 1px;
+    border: 2px;
+    border-style: solid;
+    padding: 6px;
+    border-color: #cc0000;
+    background: white;
+    color: #cc0000;
+    font-size: 16;
+}
+
+option {
+    color: #33cc33;
+}
+
+#schedule {
+}
+
+.venue {
+    font-size: 16;
+    color: #cc0000;
+    font-weight: bold;
+}
+
