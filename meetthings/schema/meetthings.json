@@ -1,0 +1,76 @@
+{
+    "event": {
+        "announce": {
+            "type": "boolean"
+        },
+        "name": {
+            "type": "string"
+        },
+        "description": {
+            "type": "string"
+        },
+        "hosts": {
+            "type": "list",
+            "of": "integer"
+        },
+        "reminders": {
+            "type": "string"
+        },
+        "rsvp": {
+            "type": "list",
+            "of": "Rsvp"
+        },
+        "start_time": {
+            "type": "datetime"
+        },
+        "timezone": {
+            "type": "string"
+        },
+        "venue": {
+            "type": "integer"
+        },
+        "venue_visibility": {
+            "type": "boolean"
+        },
+        "event_location": {
+            "type": "string"
+        }
+    },
+    "rsvp": {
+        "limit": {
+            "type": "integer"
+        },
+        "alerts": {
+            "type": "boolean"
+        },
+        "open": {
+            "type": "integer"
+        },
+        "close": {
+            "type": "integer"
+        }
+    },
+    "venue": {
+        "id": {
+            "type": "integer"
+        },
+       "address": {
+          "type": "Address"
+       }
+    },
+    "address": {
+        "street": {
+            "type": "list",
+            "of": "string"
+        },
+        "zip": {
+            "type": "integer"
+        },
+        "state": {
+            "type": "string"
+        },
+        "city": {
+            "type": "string"
+        }
+    }
+}

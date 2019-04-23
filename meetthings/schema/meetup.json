@@ -1,0 +1,80 @@
+{
+    "event": {
+        "announce": {
+            "type": "select",
+            "options": [
+                [1, "No"],
+                [2, "Yes"]
+            ],
+            "default": 1
+        },
+        "name": {
+            "type": "string"
+        },
+        "description": {
+            "type": "string"
+        },
+        "duration": {
+            "type": "integer"
+        },
+        "email_reminders": {
+            "type": "boolean"
+        },
+        "group_id": {
+            "type": "integer"
+        },
+        "group_urlname": {
+            "type": "string"
+        },
+        "guest_limit": {
+            "type": "integer"
+        },
+        "host_instructions": {
+            "type": "string"
+        },
+        "hosts": {
+            "type": "string"
+        },
+        "how_to_find_us": {
+            "type": "string"
+        },
+        "name": {
+            "type": "string"
+        },
+        "publish_status": {
+            "type": "boolean"
+        },
+        "question_{index}": {
+            "type": "string"
+        },
+        "rsvp_alerts": {
+            "type": "boolean"
+        },
+        "rsvp_close": {
+            "type": "datetime"
+        },
+        "rsvp_limit": {
+            "type": "integer"
+        },
+        "rsvp_open": {
+            "type": "datetime"
+        },
+        "simple_html_description": {
+            "type": "string"
+        },
+        "time": {
+            "type": "datetime"
+        },
+        "venue_id": {
+            "type": "integer"
+        },
+        "venue_visibility": {
+            "type": "boolean"
+        },
+        "waitlisting": {
+            "type": "boolean"
+        },
+        "why": {
+            "type": "string"
+        },
+    

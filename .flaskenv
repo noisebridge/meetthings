@@ -1,2 +1,4 @@
-FLASK_APP=nb_meetup.py
+FLASK_APP=meetthings
 FLASK_DEBUG=1
+APPLICATION_SETTINGS=app.cfg
+FLASK_ENV=development
