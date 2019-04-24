@@ -4,21 +4,31 @@
             "type": "boolean"
         },
         "name": {
-            "type": "string"
+            "type": "string",
+            "validators": {
+                "length": {"min":10, "max":80, "message":"Name must be between 10 and 80 characters"}
+            },
+            "required": true
         },
         "description": {
-            "type": "string"
+            "type": "string",
+            "validators": {
+                "length": {"min":200, "max":50000, 
+                    "message": "Description must be between 200 and 50,000 characters"}
+            },
+            "required": true
         },
         "hosts": {
-            "type": "list",
-            "of": "integer"
+            "type": "string",
+            "validators": {
+                "length": {"min":1, "max":5, "message":"Minimum 1 host"}
+            }
         },
         "reminders": {
-            "type": "string"
+            "type": "boolean"
         },
         "rsvp": {
-            "type": "list",
-            "of": "Rsvp"
+            "type": "rsvp"
         },
         "start_time": {
             "type": "datetime"
