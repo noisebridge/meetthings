@@ -19,16 +19,14 @@ class MeetingObject:
         self.metadata = schema[self.schema_name]
         self.validators = {}
 
-    def compose_form(self):
+    def build_base_fields(self):
         if self.schema_name is None:
             raise NoSchemaException
 
         self.fields = {
-            field_name: FIELD_MAPPING[field['type']](field_name)
+            field_name: {'base': FIELD_MAPPING[field['type']](field_name)}
             for field_name, field in self.metadata.items()
             if field['type'] in FIELD_MAPPING}
-
-        self.enrich_fields()
 
     def enrich_fields(self):
         for field in self.fields.keys():
@@ -38,7 +36,7 @@ class MeetingObject:
             else:
                 continue
 
-            self.validators[field] = [
+            self.fields[field]['validators'] = [
                 getattr(validators, validator)(**args)
                 for validator, args
                 in field_schema['validators'].items()]
