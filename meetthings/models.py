@@ -1,37 +1,23 @@
-class EventMetadataHandeler:
+class MeetingObject:
 
-    def __init__(self):
-        pass
+    def __init__(self, schema):
+        self.metadata = schema[self.schema_name]
 
-
-class Event:
-
-    id = 0
-    name = ""
-    desc = ""
-    venue_id = 0
-    published = False
-    start_datetime = ""
-    end_datetime = ""
-
-    rrule = None
-    metadata = None  # various calendar specific metadata?
-
-    def __init__(self):
-        pass
+    def set_schema(self, schema):
+        self.metadata = schema[self.name]
 
 
-class Venue:
+class Event(MeetingObject):
+    schema_name = 'event'
 
-    address = None
-    id = None
 
-    metadata = None
+class Venue(MeetingObject):
+    schema_name = 'venue'
 
-    def __init_(meetup_venue=None):
-        if meetup_venue:
-            venue_from_meetup(meetup_venue)
 
-    def venue_from_meetup(venue_data):
-        for k, v in ven_data.items():
-            setattr(self, k, v)
+class Rsvp(MeetingObject):
+    schema_name = 'rsvp'
+
+
+class Address(MeetingObject):
+    schema_name = 'address'
