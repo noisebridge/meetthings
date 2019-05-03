@@ -37,7 +37,7 @@
             "type": "string"
         },
         "venue": {
-            "type": "integer"
+            "type": "venue"
         },
         "venue_visibility": {
             "type": "boolean"
@@ -70,8 +70,7 @@
     },
     "address": {
         "street": {
-            "type": "list",
-            "of": "string"
+            "type": "string"
         },
         "zip": {
             "type": "integer"
