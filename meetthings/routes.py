@@ -23,7 +23,11 @@ def create_event():
         flash("New event created!")
         return redirect(url_for('index'))
 
-    forms = form_factory(load_schema('meetthings'))
+    form_classes = form_factory(load_schema('meetthings'))
+    forms = {name: form() for name, form in form_classes.items()}
+
+    import pudb
+    pudb.set_trace()
     # form.group_id.data = app.config['GROUP_ID']
     # form.group_urlname.data = app.config['URLNAME']
     # form.venue_id.data = app.config['VENUE_ID']

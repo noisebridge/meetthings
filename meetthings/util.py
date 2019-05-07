@@ -1,8 +1,11 @@
 import json
+import os
 
 
 def load_schema(name):
-    with open("./schema/"+name+".json", 'r') as f:
+    here, _ = os.path.split(__file__)
+    api_path = os.path.join(here, "schema", name + ".json")
+    with open(api_path, 'r') as f:
         schema = json.load(f)
 
     return schema

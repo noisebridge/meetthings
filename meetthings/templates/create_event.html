@@ -18,52 +18,27 @@
   <div>
     <h1>Create new Event</h1>
     <div class="mandatory">
-      {{ render_field(form.name) }}<br>
-      {{ render_field(form.description) }}<br>
+      {{ render_field(forms.event.name) }}<br>
+      {{ render_field(forms.event.description) }}<br>
       <div id="placeandtime">
         <div id="schedule">
-          <div class="starttime">
-            <span class="label" id="starttime">Start Time</span><br>
-            {{ form.start_month }}
-            {{ form.start_day }}
-            {{ form.start_year }} <br>
-            {{ form.start_hour }}
-            {{ form.start_min }}
-            {{ form.start_day_part }}
-          </div>
-          <br>
-          <div class="endtime">
-            <span class="label" id="endtime">End Time</span><br>
-            {{ form.end_month }}
-            {{ form.end_day }}
-            {{ form.end_year }} <br>
-            {{ form.end_hour }}
-            {{ form.end_min }}
-            {{ form.end_day_part }}
-          </div>
         </div>
         <br>
         <div class="venue">
           Venue: <br>
-          {{ form.venue.address_1 }}<br>
-          {{ form.venue.address_2 }}<br>
-          {{ form.venue.city}}, {{form.venue.state}}, {{form.venue.zip }}<br>
-          {{ render_field(form.how_to_find_us) }}
+          {{ forms.venue.street }}<br>
+          {{ forms.venue.city}}, {{forms.venue.state}}, {{forms.venue.zip }}<br>
         </div>
       </div>
     </div>
-    {{ render_field(form.email_reminders) }}<br>
-    {{ render_field(form.guest_limit) }}<br>
-    {{ render_field(form.host_instructions) }}<br>
-    {{ render_field(form.event_hosts) }}<br>
-    {{ render_field(form.questions) }}<br>
-    {{ render_field(form.rsvp_alerts) }}<br>
-    {{ render_field(form.rsvp_close) }}<br>
-    {{ render_field(form.rsvp_limit) }}<br>
-    {{ render_field(form.rsvp_open) }}<br>
-    {{ render_field(form.simple_html_description) }}<br>
-    {{ render_field(form.venue_visibility) }}<br>
-    {{ form.submit}}
+    {{ render_field(forms.event.reminders) }}<br>
+    {{ render_field(forms.event.hosts) }}<br>
+    {{ render_field(forms.rsvp.alerts) }}<br>
+    {{ render_field(forms.rsvp.close) }}<br>
+    {{ render_field(forms.rsvp.limit) }}<br>
+    {{ render_field(forms.rsvp.open) }}<br>
+    {{ render_field(forms.event.venue_visibility) }}<br>
+    {{ forms.submit}}
   </div>
 </form>
 

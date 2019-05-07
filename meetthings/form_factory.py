@@ -1,7 +1,6 @@
-import pudb
 from collections import defaultdict
 from flask_wtf import FlaskForm
-from util import get_validators
+from meetthings.util import get_validators
 from wtforms import (
     StringField,
     BooleanField,
@@ -9,8 +8,6 @@ from wtforms import (
     DateTimeField,
     FormField,
 )
-
-from pudb import set_trace
 
 FIELD_MAPPING = {
     'string': StringField,
@@ -30,6 +27,14 @@ class Promise:
         pass
 
 
+class MeetthingsForm(FlaskForm):
+
+    @classmethod
+    def append_field(cls, name, field):
+        setattr(cls, name, field)
+        return cls
+
+
 def create_field(name, field_def):
     # if field is not in FIELD_MAPPING, we need to create a FormField.
     # hold a promise to do that, then reprocess once all top level fields
@@ -46,7 +51,7 @@ def create_field(name, field_def):
     else:
         field_validators = None
 
-    kwargs = {'name': name,
+    kwargs = {'label': name,
               'validators': field_validators}
 
     return field_class(**kwargs)
@@ -57,21 +62,27 @@ def form_factory(schema):
     forms = {}
 
     for form, form_def in schema.items():
-        form_obj = type(form, (FlaskForm, ), {})
+        form_obj = type(form, (MeetthingsForm, ), {})
 
+        fields = []
         for field, field_def in form_def.items():
             field_obj = create_field(field, field_def)
 
             if isinstance(field_obj, Promise):
                 promises[form].append(field_obj)
             else:
-                setattr(form_obj, field, field_obj)
+                fields.append(field_obj)
+                # Look up that class method with new form class approach
+                # super(FlaskForm, form_obj).__setattr__(field, field_obj)
+                form_obj.append_field(field, field_obj)
 
         if form not in promises:
             FIELD_MAPPING[form] = FormField
 
         forms[form] = form_obj
 
+    # Deal with Fields that need to be FormFields once all the forms are fully
+    # parsed.
     counter = 0
     while len(promises) != 0:
 

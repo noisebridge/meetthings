@@ -27,17 +27,11 @@
         "reminders": {
             "type": "boolean"
         },
-        "rsvp": {
-            "type": "rsvp"
-        },
         "start_time": {
             "type": "datetime"
         },
         "timezone": {
             "type": "string"
-        },
-        "venue": {
-            "type": "venue"
         },
         "venue_visibility": {
             "type": "boolean"
@@ -63,10 +57,7 @@
     "venue": {
         "id": {
             "type": "integer"
-        },
-       "address": {
-          "type": "Address"
-       }
+        }
     },
     "address": {
         "street": {
