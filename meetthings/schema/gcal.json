@@ -1,145 +1,139 @@
 {
-	"kind": "calendar#event",
-	"etag": "etag",
-	"id": "string",
-	"status": "string",
-	"htmlLink": "string",
-	"created": "datetime",
-	"updated": "datetime",
-	"summary": "string",
-	"description": "string",
-	"location": "string",
-	"colorId": "string",
+	"kind": { "type": "calendar#event" },
+	"etag": { "type": "etag" },
+	"id": { "type": "string" },
+	"status": { "type": "string" },
+	"htmlLink": { "type": "string" },
+	"created": { "type": "datetime" },
+	"updated": { "type": "datetime" },
+	"summary": { "type": "string" },
+	"description": { "type": "string" },
+	"location": { "type": "string" },
+	"colorId": { "type": "string" },
 	"creator": {
-		"id": "string",
-		"email": "string",
-		"displayName": "string",
-		"self": "boolean"
+		"id": { "type": "string" },
+		"email": { "type": "string" },
+		"displayName": { "type": "string" },
+		"self": { "type": "boolean" }
 	},
 	"organizer": {
-		"id": "string",
-		"email": "string",
-		"displayName": "string",
-		"self": "boolean"
+		"id": { "type": "string" },
+		"email": { "type": "string" },
+		"displayName": { "type": "string" },
+		"self": { "type": "boolean" }
 	},
 	"start": {
-		"date": "date",
-		"dateTime": "datetime",
-		"timeZone": "string"
+		"date": { "type": "date" },
+		"dateTime": { "type": "datetime" },
+		"timeZone": { "type": "string" }
 	},
 	"end": {
-		"date": "date",
-		"dateTime": "datetime",
-		"timeZone": "string"
+		"date": { "type": "date" },
+		"dateTime": { "type": "datetime" },
+		"timeZone": { "type": "string" }
 	},
-	"endTimeUnspecified": "boolean",
+	"endTimeUnspecified": { "type": "boolean" },
 	"recurrence": [
 		"string"
   ],
-  "recurringEventId": "string",
+  "recurringEventId": { "type": "string" },
   "originalStartTime": {
-	  "date": "date",
-	  "dateTime": "datetime",
-	  "timeZone": "string"
+	  "date": { "type": "date" },
+	  "dateTime": { "type": "datetime" },
+	  "timeZone": { "type": "string" }
   },
-  "transparency": "string",
-  "visibility": "string",
-  "iCalUID": "string",
-  "sequence": "integer",
+  "transparency": { "type": "string" },
+  "visibility": { "type": "string" },
+  "iCalUID": { "type": "string" },
+  "sequence": { "type": "integer" },
   "attendees": [
 	  {
-		  "id": "string",
-		  "email": "string",
-		  "displayName": "string",
-		  "organizer": "boolean",
-		  "self": "boolean",
-		  "resource": "boolean",
-		  "optional": "boolean",
-		  "responseStatus": "string",
-		  "comment": "string",
-		  "additionalGuests": "integer"
+		  "id": { "type": "string" },
+		  "email": { "type": "string" },
+		  "displayName": { "type": "string" },
+		  "organizer": { "type": "boolean" },
+		  "self": { "type": "boolean" },
+		  "resource": { "type": "boolean" },
+		  "optional": { "type": "boolean" },
+		  "responseStatus": { "type": "string" },
+		  "comment": { "type": "string" },
+		  "additionalGuests": { "type": "integer" }
 	  }
   ],
-  "attendeesOmitted": "boolean",
+  "attendeesOmitted": { "type": "boolean" },
   "extendedProperties": {
 	  "private": {
-		  (key): "string"
+		  (key): { "type": "string" }
 	  },
 	  "shared": {
-		  (key): "string"
+		  (key): { "type": "string" }
 	  }
   },
-  "hangoutLink": "string",
+  "hangoutLink": { "type": "string" },
   "conferenceData": {
 	  "createRequest": {
-		  "requestId": "string",
-		  "conferenceSolutionKey": {
-			  "type": "string"
-		  },
-		  "status": {
-			  "statusCode": "string"
-		  }
+		  "requestId": { "type": "string" },
+		  "conferenceSolutionKey": {"type": "string" },
+		  "status": { "statusCode": { "type": "string" } }
 	  },
 	  "entryPoints": [
 		  {
-			  "entryPointType": "string",
-			  "uri": "string",
-			  "label": "string",
-			  "pin": "string",
-			  "accessCode": "string",
-			  "meetingCode": "string",
-			  "passcode": "string",
-			  "password": "string"
+			  "entryPointType": { "type": "string" },
+			  "uri": { "type": "string" },
+			  "label": { "type": "string" },
+			  "pin": { "type": "string" },
+			  "accessCode": { "type": "string" },
+			  "meetingCode": { "type": "string" },
+			  "passcode": { "type": "string" },
+			  "password": { "type": "string" }
 		  }
 	  ],
 	  "conferenceSolution": {
 		  "key": {
-			  "type": "string"
+			  "type": { "type": "string" }
 		  },
-		  "name": "string",
-		  "iconUri": "string"
+		  "name": { "type": "string" },
+		  "iconUri": { "type": "string" }
 	  },
-	  "conferenceId": "string",
-	  "signature": "string",
-	  "notes": "string",
+	  "conferenceId": { "type": "string" },
+	  "signature": { "type": "string" },
+	  "notes": { "type": "string" },
 	  "gadget": {
-		  "type": "string",
-		  "title": "string",
-		  "link": "string",
-		  "iconLink": "string",
-		  "width": "integer",
-		  "height": "integer",
-		  "display": "string",
-		  "preferences": {
-			  (key): "string"
-		  }
+		  "type": { "type": "string" },
+		  "title": { "type": "string" },
+		  "link": { "type": "string" },
+		  "iconLink": { "type": "string" },
+		  "width": { "type": "integer" },
+		  "height": { "type": "integer" },
+		  "display": { "type": "string" },
+		  "preferences": {"key": { "type": "string" } }
 	  },
-	  "anyoneCanAddSelf": "boolean",
-	  "guestsCanInviteOthers": "boolean",
-	  "guestsCanModify": "boolean",
-	  "guestsCanSeeOtherGuests": "boolean",
-	  "privateCopy": "boolean",
-	  "locked": "boolean",
+	  "anyoneCanAddSelf": { "type": "boolean" },
+	  "guestsCanInviteOthers": { "type": "boolean" },
+	  "guestsCanModify": { "type": "boolean" },
+	  "guestsCanSeeOtherGuests": { "type": "boolean" },
+	  "privateCopy": { "type": "boolean" },
+	  "locked": { "type": "boolean" },
 	  "reminders": {
-		  "useDefault": "boolean",
+		  "useDefault": { "type": "boolean" },
 		  "overrides": [
 			  {
-				  "method": "string",
-				  "minutes": "integer"
+				  "method": { "type": "string" },
+				  "minutes": { "type": "integer" }
 			  }
 		  ]
 	  },
 	  "source": {
-		  "url": "string",
-		  "title": "string"
+		  "url": { "type": "string" },
+		  "title": { "type": "string" }
 	  },
 	  "attachments": [
 		  {
-			  "fileUrl": "string",
-			  "title": "string",
-			  "mimeType": "string",
-			  "iconLink": "string",
-			  "fileId": "string"
+			  "fileUrl": { "type": "string" },
+			  "title": { "type": "string" },
+			  "mimeType": { "type": "string" },
+			  "iconLink": { "type": "string" },
+			  "fileId": { "type": "string" }
 		  }
 	  ]
   }

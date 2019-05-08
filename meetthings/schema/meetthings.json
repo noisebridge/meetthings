@@ -1,95 +1,57 @@
 {
     "event": {
-        "announce": {
-            "type": "boolean"
-        },
-        "name": {
+        "announce": { "type": "boolean" },
+        "name": { 
             "type": "string",
-            "validators": {
-                "length": {"min":10, "max":80, "message":"Name must be between 10 and 80 characters"}
-            },
-            "required": true
-        },
-        "description": {
+            "validators": { 
+                "length": {"min":10, "max":80, "message":"Name must be between 10 and 80 characters"} },
+            "required": true },
+        "description": { "type": "string",
+            "validators": { 
+                "length": {"min":200, 
+                    "max":50000, 
+                    "message": "Description must be between 200 and 50,000 characters"} },
+            "required": true },
+        "hosts": { 
             "type": "string",
-            "validators": {
-                "length": {"min":200, "max":50000, 
-                    "message": "Description must be between 200 and 50,000 characters"}
-            },
-            "required": true
+            "validators": { "length": {"min":1, "max":5, "message":"Minimum 1 host"} } },
+        "reminders": { "type": "boolean" },
+        "start_time": { "type": "datetime" },
+        "timezone": { "type": "string" },
+        "venue_visibility": { "type": "boolean" },
+        "event_location": { "type": "string" }
+       },
+    "rsvp": { 
+        "limit": { "type": "integer" },
+        "alerts": { "type": "boolean" },
+        "open": { "type": "integer" },
+        "close": { "type": "integer" }
         },
-        "hosts": {
-            "type": "string",
-            "validators": {
-                "length": {"min":1, "max":5, "message":"Minimum 1 host"}
-            }
-        },
-        "reminders": {
-            "type": "boolean"
-        },
-        "start_time": {
-            "type": "datetime"
-        },
-        "timezone": {
-            "type": "string"
-        },
-        "venue_visibility": {
-            "type": "boolean"
-        },
-        "event_location": {
-            "type": "string"
-        }
-    },
-    "rsvp": {
-        "limit": {
-            "type": "integer"
-        },
-        "alerts": {
-            "type": "boolean"
-        },
-        "open": {
-            "type": "integer"
-        },
-        "close": {
-            "type": "integer"
-        }
-    },
     "venue": {
-        "id": {
-            "type": "integer"
-        }
+        "id": { "type": "integer"} 
     },
-    "address": {
-        "street": {
-            "type": "string"
+    "address": { "street": { "type": "string" },
+        "zip": { "type": "integer" },
+        "state": { "type": "string" },
+        "city": { "type": "string" }
         },
-        "zip": {
-            "type": "integer"
-        },
-        "state": {
-            "type": "string"
-        },
-        "city": {
-            "type": "string"
-        }
-    },
     "recurrance": {
-        "freq": { "type": "string"},
-        "dtstart": { "type": "datetime"},
-        "interval": { "type": "integer"},
-        "wkst": { "type": "integer"},
-        "count": { "type": "integer"},
-        "until": { "type": "datetime"},
-        "bysetpos": { "type": "integer"},
-        "bymonth": { "type": "integer"},
-        "bymonthday": { "type": "integer"},
-        "byyearday": { "type": "integer"},
-        "byeaster": { "type": "integer"},
-        "byweekno": { "type": "integer"},
-        "byweekday": { "type": "integer"},
-        "byhour": { "type": "integer"},
-        "byminute": { "type": "integer"},
-        "bysecond": { "type": "integer"},
-        "cache": { "type": "boolean"}
+        "freq": { "type": "string" },
+        "dtstart": { "type": "datetime" },
+        "interval": { "type": "integer" },
+        "wkst": { "type": "integer" },
+        "count": { "type": "integer" },
+        "until": { "type": "datetime" },
+        "bysetpos": { "type": "integer" },
+        "bymonth": { "type": "integer" },
+        "bymonthday": { "type": "integer" },
+        "byyearday": { "type": "integer" },
+        "byeaster": { "type": "integer" },
+        "byweekno": { "type": "integer" },
+        "byweekday": { "type": "integer" },
+        "byhour": { "type": "integer" },
+        "byminute": { "type": "integer" },
+        "bysecond": { "type": "integer" },
+        "cache": { "type": "boolean" }
     }
 }
