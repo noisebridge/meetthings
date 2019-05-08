@@ -72,5 +72,24 @@
         "city": {
             "type": "string"
         }
+    },
+    "recurrance": {
+        "freq": { "type": "string"},
+        "dtstart": { "type": "datetime"},
+        "interval": { "type": "integer"},
+        "wkst": { "type": "integer"},
+        "count": { "type": "integer"},
+        "until": { "type": "datetime"},
+        "bysetpos": { "type": "integer"},
+        "bymonth": { "type": "integer"},
+        "bymonthday": { "type": "integer"},
+        "byyearday": { "type": "integer"},
+        "byeaster": { "type": "integer"},
+        "byweekno": { "type": "integer"},
+        "byweekday": { "type": "integer"},
+        "byhour": { "type": "integer"},
+        "byminute": { "type": "integer"},
+        "bysecond": { "type": "integer"},
+        "cache": { "type": "boolean"}
     }
 }

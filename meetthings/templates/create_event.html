@@ -17,28 +17,13 @@
   </div>
   <div>
     <h1>Create new Event</h1>
-    <div class="mandatory">
-      {{ render_field(forms.event.name) }}<br>
-      {{ render_field(forms.event.description) }}<br>
-      <div id="placeandtime">
-        <div id="schedule">
-        </div>
-        <br>
-        <div class="venue">
-          Venue: <br>
-          {{ forms.venue.street }}<br>
-          {{ forms.venue.city}}, {{forms.venue.state}}, {{forms.venue.zip }}<br>
-        </div>
-      </div>
+      {% for formname, form in forms.items() %}
+      <h2>{{ formname }}</h2>
+        {% for field in form %}
+          {{ render_field(field) }}<br>
+        {% endfor %}
+      {% endfor %}
     </div>
-    {{ render_field(forms.event.reminders) }}<br>
-    {{ render_field(forms.event.hosts) }}<br>
-    {{ render_field(forms.rsvp.alerts) }}<br>
-    {{ render_field(forms.rsvp.close) }}<br>
-    {{ render_field(forms.rsvp.limit) }}<br>
-    {{ render_field(forms.rsvp.open) }}<br>
-    {{ render_field(forms.event.venue_visibility) }}<br>
-    {{ forms.submit}}
   </div>
 </form>
 
