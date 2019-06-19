@@ -1,0 +1,35 @@
+{
+    "event": {
+        "announce": { "meetup": "announce" },
+        "name": {
+            "meetup": "name",
+            "gcal": "summary" 
+        },
+        "description": {
+            "meetup": "description",
+            "gcal": "description"
+        },
+        "hosts": {
+            "meetup": "hosts",
+            "gcal": "organizer"
+        },
+        "reminders": {
+            "meetup": "reminders",
+            "gcal": "reminders"
+        },
+        "start_time": {
+            "meetup": "time",
+            "gcal": "start"
+        },
+        "venue_visibility": { "meetup": "venue_visibility" },
+        "event_location": { "meetup": "event_location" }
+    },
+    "rsvp": {
+        "open": [],
+        "close": [],
+        "alerts": [],
+        "limit": []
+    }
+}
+
+
